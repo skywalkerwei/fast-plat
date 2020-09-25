@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
-        Ycpfzf\Apidoc\DocServiceProvider::class,
+//        Ycpfzf\Apidoc\DocServiceProvider::class,
 
     ],
 

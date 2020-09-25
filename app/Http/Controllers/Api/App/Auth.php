@@ -9,9 +9,9 @@ use App\Http\Controllers\Base;
 
 
 /**
- * @title  认证
- * @group 用户端
- * @description 认证相关
+ * @group 用户Auth
+ *
+ * APIs for managing users
  */
 class Auth extends Base
 {
@@ -24,14 +24,10 @@ class Auth extends Base
     }
 
     /**
-     * @title 登陆
-     * @description 用户登陆
-     * @author 开发者
-     * @url /api/login
-     * @method Post
-     * @param name:name type:string require:1 default: other: desc:name
-     * @param name:password type:string require:1 default: other: desc:密码
-     * @return array:数组值#
+     * 登陆
+     *
+     * 登陆
+     *
      */
     public function login(UserRequest $request)
     {
@@ -44,13 +40,10 @@ class Auth extends Base
     }
 
     /**
-     * @title 获取当前用户信息
-     * @description 获取当前用户信息
-     * @author 开发者
-     * @url /api/me
-     * @method Get
-     * @header name:Authorization type:string require:1 default: other: desc:Authorization
-     * @return array:数组值#
+     * 获取个人信息
+     *
+     *获取个人信息
+     *
      */
      public  function  profile(Request $request){
 
@@ -61,14 +54,9 @@ class Auth extends Base
     }
 
     /**
-     * @title 注册
-     * @description 用户注册
-     * @author 开发者
-     * @url /api/reg
-     * @method Post
-     * @param name:name type:string require:1 default: other: desc:name
-     * @param name:password type:string require:1 default: other: desc:密码
-     * @return array:数组值#
+     * 注册
+     *
+     *  @param App\Http\Requests\RegPost $request
      */
     public function reg(RegPost $request)
     {
@@ -96,13 +84,10 @@ class Auth extends Base
     }
 
     /**
-     * @title 退出登陆
-     * @description logout
-     * @author 开发者
-     * @url /api/logout
-     * @method Get
-     * @header name:Authorization type:string require:1 default: other: desc:Authorization
-     * @return array:数组值#
+     * 退出
+     *
+     * 退出
+     *
      */
     public  function  logout(Request $request){
         $this->clearToken();

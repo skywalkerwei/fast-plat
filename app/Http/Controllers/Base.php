@@ -26,8 +26,8 @@ class Base extends Controller
         return $this->response->success($data, $msg, $code);
     }
 
-    public function fail($msg = 'faild', $data = [], $code = 500) {
-        return $this->response->fail($msg, $code, $data);
+    public function fail($msg = 'faild', $data = [], $code = 0) {
+        return $this->response->fail($msg, $code,$data);
     }
 
     public function clearToken(){

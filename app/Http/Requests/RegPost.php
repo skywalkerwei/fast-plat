@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
-
+/**
+ * @bodyParam  name string  required 用户名  Example: demo
+ * @bodyParam  password string required 密码  Example: 123456
+ */
 class RegPost extends  BaseRequest
 {
     public function rules()

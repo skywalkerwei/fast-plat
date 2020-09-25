@@ -17,11 +17,11 @@ use Illuminate\Routing\Router;
 Route::group([
     'middleware'    => ['api.access'],
 ], function (Router $api) {
-//    $api->get('t1', 'Tests@tt');
 
-    $api->post('login','Tests@tt');
-
-
+    $api->get('t1', 'Tests@tt');
+    $api->get('t2', 'Tests@tt2');
+    $api->post('login', 'Auth@login');
+    $api->post('reg','Auth@reg');
 
 });
 
@@ -29,9 +29,9 @@ Route::group([
 Route::group([
     'middleware'    => ['api.access','jwt.role:user','api.jwt'],
 ], function (Router $api) {
-
-//    $api->get('me', 'Auth@profile');    // 登录信息
-//    $api->get('logout', 'Auth@logout'); //
+    //
+    $api->get('profile', 'Auth@profile');
+    $api->get('logout', 'Auth@logout');
 
 });
 

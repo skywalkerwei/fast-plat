@@ -10,11 +10,7 @@ use App\Http\Controllers\Base;
 //use Tightenco\Collect\Support\Collection;
 //use Rodenastyle\StreamParser\StreamParser;
 
-/**
- * @title  用户
- * @group 用户端
- * @description 用户相关
- */
+
 class User extends Base
 {
 
@@ -33,14 +29,7 @@ class User extends Base
 //        $this->userService = $userService;
 //    }
 
-    /**
-     * @title 全部用户
-     * @description 全部用户
-     * @author 开发者
-     * @url /api/userlist
-     * @method Get
-     * @return array:数组值#
-     */
+
     public  function  list(Request $request){
 //        echo password_hash('123123', PASSWORD_BCRYPT);
 //        $sms = app('easysms');

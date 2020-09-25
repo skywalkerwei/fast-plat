@@ -140,6 +140,8 @@ class Response
             $status = false;
         } elseif ($code >= 500 && $code <= 599) {// service error
             $status = false;
+        } elseif ($code == 0){
+            $status = false;
         } else {
             $status = true;
         }

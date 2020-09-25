@@ -19,9 +19,9 @@ Route::group([
     'middleware'    => ['api.access'],
 ], function (Router $api) {
 
-    $api->get('test',function (){
-        echo "merchant test";
-    });
+//    $api->get('test',function (){
+//        echo "merchant test";
+//    });
 
 
 });

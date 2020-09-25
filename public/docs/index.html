@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://base.dev.com/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_a1fe71e3f81c678ff1c5de944a883135 -->
+<h2>api/notify/ali</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/notify/ali" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/notify/ali"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": "ali tt",
+    "code": 200,
+    "msg": "success"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/notify/ali</code></p>
+<p><code>POST api/notify/ali</code></p>
+<p><code>PUT api/notify/ali</code></p>
+<p><code>PATCH api/notify/ali</code></p>
+<p><code>DELETE api/notify/ali</code></p>
+<p><code>OPTIONS api/notify/ali</code></p>
+<!-- END_a1fe71e3f81c678ff1c5de944a883135 -->
+<!-- START_6cf6d990559dd99ab46be9cc608c0354 -->
+<h2>api/notify/wx</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/notify/wx" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/notify/wx"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "data": {},
+    "code": 500,
+    "msg": "wx tt"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/notify/wx</code></p>
+<p><code>POST api/notify/wx</code></p>
+<p><code>PUT api/notify/wx</code></p>
+<p><code>PATCH api/notify/wx</code></p>
+<p><code>DELETE api/notify/wx</code></p>
+<p><code>OPTIONS api/notify/wx</code></p>
+<!-- END_6cf6d990559dd99ab46be9cc608c0354 -->
+<h1>测试</h1>
+<p>APIs for managing users</p>
+<!-- START_121fbd4baaa7fe23fddc16c32137d7ec -->
+<h2>测试-tt</h2>
+<p>测试内容</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/t1?location_id=distinctio&amp;user_id=me&amp;page=4" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -d '{"user_id":9,"room_id":"est","forever":false}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/t1"
+);
+
+let params = {
+    "location_id": "distinctio",
+    "user_id": "me",
+    "page": "4",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "user_id": 9,
+    "room_id": "est",
+    "forever": false
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": true,
+    "data": "\/www\/base\/resources\/views",
+    "code": 200,
+    "msg": "OK"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/t1</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>The ID of the post.</td>
+</tr>
+<tr>
+<td><code>lang</code></td>
+<td>optional</td>
+<td>The language.</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>location_id</code></td>
+<td>required</td>
+<td>The id of the location.</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>required</td>
+<td>The id of the user.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>required</td>
+<td>The page number.</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The id of the user.</td>
+</tr>
+<tr>
+<td><code>room_id</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The id of the room.</td>
+</tr>
+<tr>
+<td><code>forever</code></td>
+<td>boolean</td>
+<td>optional</td>
+<td>Whether to ban the user forever.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_121fbd4baaa7fe23fddc16c32137d7ec -->
+<!-- START_780bfd6704d357d2ee9759342647181c -->
+<h2>api/t2</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/t2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/t2"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 4,
+    "name": "Jessica Jones",
+    "roles": [
+        "admin"
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/t2</code></p>
+<!-- END_780bfd6704d357d2ee9759342647181c -->
+<h1>用户Auth</h1>
+<p>APIs for managing users</p>
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<h2>登陆</h2>
+<p>登陆</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://base.dev.com/api/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login</code></p>
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<!-- START_0bc3cbbb9a32a0f56613fecfe7ec61e9 -->
+<h2>注册</h2>
+<p>@param App\Http\Requests\RegPost $request</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://base.dev.com/api/reg" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}" \
+    -d '{"name":"demo","password":"123456"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/reg"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "name": "demo",
+    "password": "123456"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/reg</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+<!-- END_0bc3cbbb9a32a0f56613fecfe7ec61e9 -->
+<!-- START_3c520b0ccdbf5100b6f6994368e1b344 -->
+<h2>获取个人信息</h2>
+<p>获取个人信息</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/profile" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/profile"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "code": 10003,
+    "msg": "token无效"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/profile</code></p>
+<!-- END_3c520b0ccdbf5100b6f6994368e1b344 -->
+<!-- START_00e7e21641f05de650dbe13f242c6f2c -->
+<h2>退出</h2>
+<p>退出</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://base.dev.com/api/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer {token}"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://base.dev.com/api/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": false,
+    "code": 10003,
+    "msg": "token无效"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/logout</code></p>
+<!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

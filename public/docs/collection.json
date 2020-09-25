@@ -1,0 +1,304 @@
+{
+    "variables": [],
+    "info": {
+        "name": "KyleAdmin API",
+        "_postman_id": "a1f3c33c-2a30-40f0-a680-06c5f09b2eb1",
+        "description": "\u6d4b\u8bd5\u6587\u6863",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/notify\/ali",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/notify\/ali",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/notify\/wx",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/notify\/wx",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "\u6d4b\u8bd5",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "\u6d4b\u8bd5-tt",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/t1",
+                            "query": [
+                                {
+                                    "key": "location_id",
+                                    "value": "distinctio",
+                                    "description": "The id of the location.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "user_id",
+                                    "value": "me",
+                                    "description": "The id of the user.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "4",
+                                    "description": "The page number.",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"user_id\": 9,\n    \"room_id\": \"est\",\n    \"forever\": false\n}"
+                        },
+                        "description": "\u6d4b\u8bd5\u5185\u5bb9",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/t2",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/t2",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "\u7528\u6237Auth",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "\u767b\u9646",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "\u767b\u9646",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "\u6ce8\u518c",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/reg",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"password\": \"123456\"\n}"
+                        },
+                        "description": "@param App\\Http\\Requests\\RegPost $request",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "\u83b7\u53d6\u4e2a\u4eba\u4fe1\u606f",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/profile",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "\u83b7\u53d6\u4e2a\u4eba\u4fe1\u606f",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "\u9000\u51fa",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com\/",
+                            "path": "api\/logout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "\u9000\u51fa",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

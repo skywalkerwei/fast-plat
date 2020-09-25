@@ -18,9 +18,9 @@ Route::group([
     'middleware'    => [],
 ], function (Router $api) {
 
-    $api->any('test',function (){
-        echo "回调test";
-    });
+//    $api->any('test',function (){
+//        echo "回调test";
+//    });
 
     $api->any('ali','Ali@tt');
     $api->any('wx','Wx@tt');
