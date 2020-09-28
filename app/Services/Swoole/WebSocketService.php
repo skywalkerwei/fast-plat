@@ -1,10 +1,10 @@
 <?php
 namespace App\Services\Swoole;
 use Hhxsv5\LaravelS\Swoole\WebSocketHandlerInterface;
+use Illuminate\Support\Facades\Log;
 use Swoole\Http\Request;
 use Swoole\WebSocket\Frame;
 use Swoole\WebSocket\Server;
-use App\Events\Swoole\Msg;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class WebSocketService implements WebSocketHandlerInterface
@@ -15,11 +15,12 @@ class WebSocketService implements WebSocketHandlerInterface
     {
         $this->wsTable = app('swoole')->wsTable;
     }
+
     public function onOpen(Server $server, Request $request)
     {
         try {
             if ($user = JWTAuth::parseToken()->authenticate()) {
-                \Log::info('user message show',[$user->id,$user->name]);
+                Log::info('user message show',[$user->id,$user->name]);
                 $userId = $user->id ;
                 $this->wsTable->set('uid:' . $userId, ['value' => $request->fd]);// 绑定uid到fd的映射
                 $this->wsTable->set('fd:' . $request->fd, ['value' => $userId]);// 绑定fd到uid的映射
@@ -32,11 +33,12 @@ class WebSocketService implements WebSocketHandlerInterface
             $server->push($request->fd, "Welcome to LaravelS #{$request->fd}");
         }
     }
+
     public function onMessage(Server $server, Frame $frame)
     {
-        \Log::info('all message', [$this->wsTable]);
+        Log::info('all message', [$this->wsTable]);
         foreach ($this->wsTable as $key => $row) {
-            \Log::info('Received message', [$key,$row]);
+            Log::info('Received message', [$key,$row]);
 
             if (strpos($key, 'uid:') === 0 && $server->isEstablished($row['value'])) {
                 $content = sprintf('sb: new message "%s" from #%d', $frame->data, $frame->fd);
@@ -44,6 +46,7 @@ class WebSocketService implements WebSocketHandlerInterface
             }
         }
     }
+
     public function onClose(Server $server, $fd, $reactorId)
     {
         $uid = $this->wsTable->get('fd:' . $fd);

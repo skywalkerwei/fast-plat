@@ -52,8 +52,10 @@ class Notice implements ShouldQueue
 
         $port=config('laravels.listen_port');
         $client=new WebSocketClient('127.0.0.1',$port);
+        \Log::info(['1111']);
         $client->sendData(json_encode($data));
         $client->disconnect();
+        \Log::info(['2222']);
 
 //        (new \GuzzleHttp\Client())->post('http://php:9573', [
 //            'form_params' => [
