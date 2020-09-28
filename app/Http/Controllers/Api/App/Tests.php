@@ -48,13 +48,13 @@ class Tests extends Base
      */
     public function tt()
     {
-//      $user = User::findOrFail(1);
+      $user = User::findOrFail(1);
 //      errMsg("sb",'200');Q
 //      throw new \
-//        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
+        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
 //        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
 //      $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
-        return   $this->response->success(resource_path('views'));
+        return   $this->response->success($result);
 
     }
 
