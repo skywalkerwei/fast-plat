@@ -124,7 +124,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "success": false,
     "data": {},
-    "code": 500,
+    "code": 0,
     "msg": "wx tt"
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -144,18 +144,18 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://base.dev.com/api/t1?location_id=distinctio&amp;user_id=me&amp;page=4" \
+    -G "http://base.dev.com/api/t1?location_id=quos&amp;user_id=me&amp;page=4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer {token}" \
-    -d '{"user_id":9,"room_id":"est","forever":false}'
+    -d '{"user_id":9,"room_id":"sapiente","forever":false}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://base.dev.com/api/t1"
 );
 
 let params = {
-    "location_id": "distinctio",
+    "location_id": "quos",
     "user_id": "me",
     "page": "4",
 };
@@ -170,7 +170,7 @@ let headers = {
 
 let body = {
     "user_id": 9,
-    "room_id": "est",
+    "room_id": "sapiente",
     "forever": false
 }
 
@@ -186,7 +186,7 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "success": true,
-    "data": "\/www\/base\/resources\/views",
+    "data": "48",
     "code": 200,
     "msg": "OK"
 }</code></pre>

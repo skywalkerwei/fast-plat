@@ -37,19 +37,44 @@ class WebSocketService implements WebSocketHandlerInterface
     public function onMessage(Server $server, Frame $frame)
     {
         Log::info('all message', [$this->wsTable]);
+        $content = sprintf('new message "%s" from #%d', $frame->data, $frame->fd);
+        $this->sendAll($server,$content);
+
+//        foreach ($this->wsTable as $key => $row) {
+//            Log::info('Received message', [$key,$row]);
+//
+//            if (strpos($key, 'uid:') === 0 && $server->isEstablished($row['value'])) {
+//                $content = sprintf('new message "%s" from #%d', $frame->data, $frame->fd);
+//                $server->push($row['value'], $content);
+//            }
+//        }
+    }
+
+    //转发给所有人
+    protected function sendAll(Server $server,$data){
+//        foreach($server->connections as $fd){
+//            $server->push($fd,$data);
+//        }
         foreach ($this->wsTable as $key => $row) {
             Log::info('Received message', [$key,$row]);
-
-            if (strpos($key, 'uid:') === 0 && $server->isEstablished($row['value'])) {
-                $content = sprintf('sb: new message "%s" from #%d', $frame->data, $frame->fd);
-                $server->push($row['value'], $content);
-            }
+            $server->push($row['value'], $data);
         }
     }
 
+    //发送单个
+    protected function send(Server $server,$uid,$data){
+        $fd = $this->wsTable->get('uid:' . $uid);
+
+        if($fd){
+            $server->push($fd,$data);
+        }
+    }
+
+    //关闭
     public function onClose(Server $server, $fd, $reactorId)
     {
         $uid = $this->wsTable->get('fd:' . $fd);
+        Log::info('onClose message', $uid);
         if ($uid !== false) {
             $this->wsTable->del('uid:' . $uid['value']); // 解绑uid映射
         }

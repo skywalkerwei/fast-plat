@@ -120,7 +120,7 @@ fetch(url, {
 {
     "success": false,
     "data": {},
-    "code": 500,
+    "code": 0,
     "msg": "wx tt"
 }
 ```
@@ -154,11 +154,11 @@ APIs for managing users
 
 ```bash
 curl -X GET \
-    -G "http://base.dev.com/api/t1?location_id=distinctio&user_id=me&page=4" \
+    -G "http://base.dev.com/api/t1?location_id=quos&user_id=me&page=4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer {token}" \
-    -d '{"user_id":9,"room_id":"est","forever":false}'
+    -d '{"user_id":9,"room_id":"sapiente","forever":false}'
 
 ```
 
@@ -168,7 +168,7 @@ const url = new URL(
 );
 
 let params = {
-    "location_id": "distinctio",
+    "location_id": "quos",
     "user_id": "me",
     "page": "4",
 };
@@ -183,7 +183,7 @@ let headers = {
 
 let body = {
     "user_id": 9,
-    "room_id": "est",
+    "room_id": "sapiente",
     "forever": false
 }
 
@@ -202,7 +202,7 @@ fetch(url, {
 ```json
 {
     "success": true,
-    "data": "\/www\/base\/resources\/views",
+    "data": "48",
     "code": 200,
     "msg": "OK"
 }

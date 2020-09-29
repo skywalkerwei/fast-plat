@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "KyleAdmin API",
-        "_postman_id": "a1f3c33c-2a30-40f0-a680-06c5f09b2eb1",
+        "_postman_id": "6cf69048-ea65-4910-af91-835411e5fe48",
         "description": "\u6d4b\u8bd5\u6587\u6863",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -16,7 +16,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/notify\/ali",
                             "query": []
                         },
@@ -48,7 +48,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/notify\/wx",
                             "query": []
                         },
@@ -86,12 +86,12 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/t1",
                             "query": [
                                 {
                                     "key": "location_id",
-                                    "value": "distinctio",
+                                    "value": "quos",
                                     "description": "The id of the location.",
                                     "disabled": false
                                 },
@@ -126,7 +126,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user_id\": 9,\n    \"room_id\": \"est\",\n    \"forever\": false\n}"
+                            "raw": "{\n    \"user_id\": 9,\n    \"room_id\": \"sapiente\",\n    \"forever\": false\n}"
                         },
                         "description": "\u6d4b\u8bd5\u5185\u5bb9",
                         "response": []
@@ -137,7 +137,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/t2",
                             "query": []
                         },
@@ -175,7 +175,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/login",
                             "query": []
                         },
@@ -207,7 +207,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/reg",
                             "query": []
                         },
@@ -239,7 +239,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/profile",
                             "query": []
                         },
@@ -271,7 +271,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "base.dev.com\/",
+                            "host": "base.dev.com",
                             "path": "api\/logout",
                             "query": []
                         },

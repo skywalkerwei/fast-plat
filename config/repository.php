@@ -236,7 +236,7 @@ return [
             'interfaces'   => 'Repository\\Interfaces',
             'transformers' => 'Transformers',
             'presenters'   => 'Presenters',
-            'validators'   => 'Validators',
+            'validators'   => 'Http/Requests',
             'controllers'  => 'Http/Controllers',
             'provider'     => 'RepositoryServiceProvider',
             'criteria'     => 'Repository\\Criteria',
