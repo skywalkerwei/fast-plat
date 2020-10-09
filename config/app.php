@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        App\Providers\HorizonServiceProvider::class,
 //        Ycpfzf\Apidoc\DocServiceProvider::class,
 
     ],

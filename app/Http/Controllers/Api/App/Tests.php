@@ -53,13 +53,13 @@ class Tests extends Base
      */
     public function tt()
     {
-      return   $this->goodsService->tt();
+//      return   $this->goodsService->tt();
 
-//        $user = User::findOrFail(1);
-//        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
-////        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
+        $user = User::findOrFail(1);
+        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
+//        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
 ////      $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
-//        return   $this->response->success($result);
+        return   $this->response->success($result);
 
 //        $data=[
 //            'to'=>"1",

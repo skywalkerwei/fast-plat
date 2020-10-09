@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'path' => 'horizon',
+    'path' => 'kq',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,7 +144,7 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default','test'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 1,
@@ -154,9 +154,9 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default','test'],
                 'balance' => 'simple',
-                'processes' => 3,
+                'processes' => 10,
                 'tries' => 1,
             ],
         ],
