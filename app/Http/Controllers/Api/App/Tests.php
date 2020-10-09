@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\App;
 
 
 use App\Services\User\UserService;
+use App\Services\Goods\GoodsService;
 use App\Http\Controllers\Base;
 
 use App\Http\Requests\UserRequest;
@@ -14,6 +15,8 @@ use Illuminate\Support\Carbon;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
+
+use App\Services\Swoole\WebSocketClient;
 
 
 
@@ -26,10 +29,12 @@ class Tests extends Base
 {
 
     protected $userService;
+    protected $goodsService;
 
-    public function __construct(UserService $userService)
+    public function __construct(UserService $userService,GoodsService $goodsService)
     {
         $this->userService = $userService;
+        $this->goodsService = $goodsService;
     }
 
     /**
@@ -48,13 +53,25 @@ class Tests extends Base
      */
     public function tt()
     {
-      $user = User::findOrFail(1);
-//      errMsg("sb",'200');Q
-//      throw new \
-        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
-//        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
-//      $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
-        return   $this->response->success($result);
+      return   $this->goodsService->tt();
+
+//        $user = User::findOrFail(1);
+//        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
+////        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
+////      $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
+//        return   $this->response->success($result);
+
+//        $data=[
+//            'to'=>"1",
+//            'msg'=>"test ---2 ",
+//            'from'=>"system",
+//            'ext'=>"===="
+//        ];
+//        $port=config('laravels.listen_port');
+//        $client=new WebSocketClient('127.0.0.1',$port);
+//        $client->sendData(json_encode($data));
+//        $client->disconnect();
+//        return   $this->response->success("ok");
 
     }
 

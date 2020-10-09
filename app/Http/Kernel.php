@@ -75,6 +75,9 @@ class Kernel extends HttpKernel
         //权限
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+
+        //response 缓存
+        'cache.response' => \Flc\Laravel\Http\Middleware\CacheResponse::class,
     ];
 
     /**

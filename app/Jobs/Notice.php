@@ -43,19 +43,16 @@ class Notice implements ShouldQueue
         $content =   $user->name."发表了新文章" . time() . "\n";
         file_put_contents('./notice.txt', $content, FILE_APPEND);
 
-        $data=[
-            'to'=>"1",
-            'msg'=>"test ---2 ",
-            'from'=>"system",
-            'ext'=>"===="
-        ];
-
-        $port=config('laravels.listen_port');
-        $client=new WebSocketClient('127.0.0.1',$port);
-        \Log::info(['1111']);
-        $client->sendData(json_encode($data));
-        $client->disconnect();
-        \Log::info(['2222']);
+//        $data=[
+//            'to'=>"1",
+//            'msg'=>"test ---2 ",
+//            'from'=>"system",
+//            'ext'=>"===="
+//        ];
+//        $port=config('laravels.listen_port');
+//        $client=new WebSocketClient('127.0.0.1',$port);
+//        $client->sendData(json_encode($data));
+//        $client->disconnect();
 
 //        (new \GuzzleHttp\Client())->post('http://php:9573', [
 //            'form_params' => [

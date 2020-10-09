@@ -27,11 +27,13 @@ class QueryListener
      */
     public function handle(QueryExecuted $event)
     {
-
-        if($event->sql){
-            $sql = str_replace("?", "'%s'", $event->sql);
-            $log = vsprintf($sql, $event->bindings);
-            Log::channel('sql')->info($log);
+        if (env('SQL_DEBUG',true) ) {
+            if($event->sql){
+                $sql = str_replace("?", "'%s'", $event->sql);
+                $log = vsprintf($sql, $event->bindings);
+                Log::channel('sql')->info($log);
+            }
         }
+
     }
 }

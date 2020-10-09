@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "KyleAdmin API",
-        "_postman_id": "6cf69048-ea65-4910-af91-835411e5fe48",
+        "_postman_id": "c0b3dc13-09b2-485a-ade1-8b4c87c91739",
         "description": "\u6d4b\u8bd5\u6587\u6863",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -11,6 +11,70 @@
             "name": "general",
             "description": "",
             "item": [
+                {
+                    "name": "api\/goods",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com",
+                            "path": "api\/goods",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/goods\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "base.dev.com",
+                            "path": "api\/goods\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {token}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
                 {
                     "name": "api\/notify\/ali",
                     "request": {
@@ -91,7 +155,7 @@
                             "query": [
                                 {
                                     "key": "location_id",
-                                    "value": "quos",
+                                    "value": "culpa",
                                     "description": "The id of the location.",
                                     "disabled": false
                                 },
@@ -126,7 +190,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user_id\": 9,\n    \"room_id\": \"sapiente\",\n    \"forever\": false\n}"
+                            "raw": "{\n    \"user_id\": 9,\n    \"room_id\": \"qui\",\n    \"forever\": false\n}"
                         },
                         "description": "\u6d4b\u8bd5\u5185\u5bb9",
                         "response": []

@@ -11,8 +11,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-json": "*",
         "dcat/laravel-admin": "^1.7",
         "fideloper/proxy": "^4.0",
+        "flc/laravel-middleware-cache-response": "^1.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0",
         "hhxsv5/laravel-s": "~3.7.0",
@@ -23,8 +25,7 @@
         "predis/predis": "^1.1",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^3.13",
-        "tymon/jwt-auth": "^1.0",
-        "ext-json": "*"
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

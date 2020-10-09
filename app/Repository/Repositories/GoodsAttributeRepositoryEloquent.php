@@ -4,16 +4,16 @@ namespace App\Repository\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repository\Interfaces\ArticleRepository;
-use App\Repository\Models\Article;
-use App\Validators\ArticleValidator;
+use App\Repository\Interfaces\GoodsAttributeRepository;
+use App\Repository\Models\GoodsAttribute;
+use App\Http\Requests\GoodsAttributeValidator;
 
 /**
- * Class ArticleRepositoryEloquent.
+ * Class GoodsAttributeRepositoryEloquent.
  *
  * @package namespace App\Repository\Repositories;
  */
-class ArticleRepositoryEloquent extends BaseRepository implements ArticleRepository
+class GoodsAttributeRepositoryEloquent extends BaseRepository implements GoodsAttributeRepository
 {
     /**
      * Specify Model class name
@@ -22,7 +22,7 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
      */
     public function model()
     {
-        return Article::class;
+        return GoodsAttribute::class;
     }
 
     /**
@@ -33,7 +33,7 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
     public function validator()
     {
 
-        return ArticleValidator::class;
+        return GoodsAttributeValidator::class;
     }
 
 

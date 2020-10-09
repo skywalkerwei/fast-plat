@@ -237,7 +237,7 @@ return [
             'transformers' => 'Transformers',
             'presenters'   => 'Presenters',
             'validators'   => 'Http/Requests',
-            'controllers'  => 'Http/Controllers',
+            'controllers'  => 'Services\\Temporarys',//代码例子-》services
             'provider'     => 'RepositoryServiceProvider',
             'criteria'     => 'Repository\\Criteria',
         ]
