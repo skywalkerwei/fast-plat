@@ -11,7 +11,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-curl": "*",
         "ext-json": "*",
+        "ext-zip": "*",
         "dcat/laravel-admin": "^1.7",
         "fideloper/proxy": "^4.0",
         "flc/laravel-middleware-cache-response": "^1.1",
@@ -27,6 +29,9 @@
         "predis/predis": "^1.1",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^3.13",
+        "nelexa/zip": "^3.3",
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "yansongda/laravel-pay": "^2.0",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
@@ -85,6 +90,18 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "clean": [
+            "@php artisan route:clear",
+            "@php artisan config:clear",
+            "@php artisan view:clear"
+        ],
+        "rebuild": [
+            "@php artisan route:clear",
+            "@php artisan config:clear",
+            "@php artisan view:clear",
+            "@php artisan route:cache",
+            "@php artisan config:cache"
         ]
     },
     "repositories": {

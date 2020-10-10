@@ -3,7 +3,7 @@ namespace App\Services\User;
 use App\Repository\Models\User;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
-class UserService
+class Users
 {
     protected  $user;
 

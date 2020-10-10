@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api\App;
 
 use App\Services\Tools\ValidCode;
 use App\Services\User\Sms;
-use App\Services\User\UserService;
-use App\Services\Goods\GoodsService;
+use App\Services\User\Users;
+use App\Services\Good\Goods;
 use App\Http\Controllers\Base;
 
 use App\Http\Requests\UserRequest;
@@ -34,7 +34,7 @@ class Tests extends Base
     protected $goodsService;
     protected $smsService;
 
-    public function __construct(UserService $userService,GoodsService $goodsService,Sms $smsService)
+    public function __construct(Users $userService,Goods $goodsService,Sms $smsService)
     {
         $this->userService = $userService;
         $this->goodsService = $goodsService;
@@ -57,12 +57,13 @@ class Tests extends Base
      */
     public function tt()
     {
-        $result = $this->smsService->loginCheck("18627111095",'123123');
-        if($result){
-            return   $this->response->success("ok");
-        }else{
-            return   $this->response->fail("no");
-        }
+
+//        $result = $this->smsService->loginCheck("18627111095",'123123');
+//        if($result){
+//            return   $this->response->success("ok");
+//        }else{
+//            return   $this->response->fail("no");
+//        }
 
 //        $user = User::findOrFail(1);
 //        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));

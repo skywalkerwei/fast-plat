@@ -51,6 +51,7 @@ class ValidCode
             $newData['times'] = $times;
             $life=$data['life']-time();
             Cache::put($key,$newData,$life);
+
             return  false;
 
         }

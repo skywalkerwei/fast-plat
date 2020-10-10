@@ -1,9 +1,9 @@
 <?php
-namespace App\Services\Goods;
+namespace App\Services\Good;
 use App\Repository\Interfaces\GoodsRepository;
 use Illuminate\Http\Request;
 
-class GoodsService
+class Goods
 {
     private $repository;
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\App;
 
 use App\Http\Controllers\Base;
-use App\Services\Goods\GoodsService;
+use App\Services\Good\Goods as GoodsService;
 use Illuminate\Http\Request;
 
 /**
