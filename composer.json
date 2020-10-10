@@ -22,6 +22,8 @@
         "laravel/horizon": "^3.6",
         "laravel/tinker": "^2.0",
         "league/fractal": "^0.19.2",
+        "overtrue/easy-sms": "^1.1",
+        "overtrue/laravel-wechat": "^5.0",
         "predis/predis": "^1.1",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^3.13",
@@ -84,5 +86,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
     }
 }

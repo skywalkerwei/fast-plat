@@ -177,7 +177,9 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        App\Providers\EasySmsServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
+
 //        Ycpfzf\Apidoc\DocServiceProvider::class,
 
     ],

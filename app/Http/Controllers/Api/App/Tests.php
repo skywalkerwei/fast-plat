@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\App;
 
 
+use App\Services\Tools\ValidCode;
+use App\Services\User\Sms;
 use App\Services\User\UserService;
 use App\Services\Goods\GoodsService;
 use App\Http\Controllers\Base;
@@ -30,11 +32,13 @@ class Tests extends Base
 
     protected $userService;
     protected $goodsService;
+    protected $smsService;
 
-    public function __construct(UserService $userService,GoodsService $goodsService)
+    public function __construct(UserService $userService,GoodsService $goodsService,Sms $smsService)
     {
         $this->userService = $userService;
         $this->goodsService = $goodsService;
+        $this->smsService = $smsService;
     }
 
     /**
@@ -53,13 +57,18 @@ class Tests extends Base
      */
     public function tt()
     {
-//      return   $this->goodsService->tt();
+        $result = $this->smsService->loginCheck("18627111095",'123123');
+        if($result){
+            return   $this->response->success("ok");
+        }else{
+            return   $this->response->fail("no");
+        }
 
-        $user = User::findOrFail(1);
-        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
+//        $user = User::findOrFail(1);
+//        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
 //        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
-////      $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
-        return   $this->response->success($result);
+//        $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
+
 
 //        $data=[
 //            'to'=>"1",
