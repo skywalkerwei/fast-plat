@@ -65,6 +65,35 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+
+        'qiniu' => [
+            'driver' => 'qiniu',
+            'domains' => [
+                'default' => env('QINIU_DOMAIN'),
+                'https' => env('QINIU_DOMAIN'),
+                'custom' => '',
+            ],
+            'access_key' => env('QINIU_ACCESS_KEY'),
+            'secret_key' => env('QINIU_SECRET_KEY'),
+            'bucket' => env('QINIU_BUCKET'),
+            'notify_url' => '',
+            'access' => 'public',
+            'hotlink_prevention_key' => null,
+        ],
+
+
+        'oss' => [
+            'driver' => 'oss',
+            'access_id' => env('ALI_OSS_ACCESS_ID'),
+            'access_key' => env('ALI_OSS_ACCESS_KEY'),
+            'bucket' => env('ALI_OSS_BUCKET'),
+            'endpoint' => env('ALI_OSS_ENDPOINT'),
+            'cdnDomain' => env('ALI_OSS_DOMAIN'),
+            'ssl' => true,
+            'isCName' => true,
+            'debug' => false
+        ],
+
     ],
 
 ];

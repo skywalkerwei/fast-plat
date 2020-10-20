@@ -86,8 +86,6 @@ class EventServiceProvider extends ServiceProvider
 
 
 
-
-
     ];
 
     /**
