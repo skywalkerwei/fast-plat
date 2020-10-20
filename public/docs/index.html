@@ -563,18 +563,18 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://base.dev.com/api/t1?location_id=culpa&amp;user_id=me&amp;page=4" \
+    -G "http://base.dev.com/api/t1?location_id=dolorum&amp;user_id=me&amp;page=4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer {token}" \
-    -d '{"user_id":9,"room_id":"qui","forever":false}'
+    -d '{"user_id":9,"room_id":"neque","forever":false}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://base.dev.com/api/t1"
 );
 
 let params = {
-    "location_id": "culpa",
+    "location_id": "dolorum",
     "user_id": "me",
     "page": "4",
 };
@@ -589,7 +589,7 @@ let headers = {
 
 let body = {
     "user_id": 9,
-    "room_id": "qui",
+    "room_id": "neque",
     "forever": false
 }
 
@@ -600,15 +600,6 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "success": true,
-    "data": "ok",
-    "code": 200,
-    "msg": "OK"
-}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/t1</code></p>
 <h4>URL Parameters</h4>
@@ -858,8 +849,8 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "success": false,
-    "code": 10003,
-    "msg": "token无效"
+    "code": 0,
+    "msg": "Target class [App\\Services\\User\\UserService] does not exist."
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/profile</code></p>
@@ -896,8 +887,8 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "success": false,
-    "code": 10003,
-    "msg": "token无效"
+    "code": 0,
+    "msg": "Target class [App\\Services\\User\\UserService] does not exist."
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/logout</code></p>

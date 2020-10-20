@@ -14,6 +14,8 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport = [
         //
+//        ApiException::class,
+//        \Exception::class
     ];
 
     /**
@@ -25,6 +27,9 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+
+
 
     /**
      * Report or log an exception.
@@ -52,9 +57,11 @@ class Handler extends ExceptionHandler
     {
 
         if($request->is("api/*")){
+
+
             if ($exception instanceof ApiException) {
                 $code = $exception->getCode();
-                $msg = $exception->getMessage();
+                $msg = $exception->getMessage()?:"未知的错误";
             }else if($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException ){
                 $code = 404;
                 $msg = "NotFoundHttpException";
@@ -62,11 +69,13 @@ class Handler extends ExceptionHandler
                 $code = 500;
                 $msg = "MethodNotAllowedHttpException";
 
+            }else if($exception instanceof \Symfony\Component\HttpKernel\Exception\HttpException){
+                //abort
+                $code = $exception->getStatusCode();
+                $msg = $exception->getMessage()?:"未知的错误";
+
             } else {
                 $code = $exception->getCode();
-                if ( $code == 0 || $code<0){
-                    $code = 0;
-                }
                 $msg = $exception->getMessage()?:"未知的错误";
             }
 

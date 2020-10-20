@@ -29,11 +29,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //Horizon 安全
-//        Horizon::auth(function ($request) {
-//            if($request->name == env('HORIZONPWD','kyle'))
-//            {
-//                return true;
-//            }
-//        });
+        Horizon::auth(function ($request) {
+            if($request->name == env('HORIZONPWD','kyle'))
+            {
+                return true;
+            }
+        });
     }
 }

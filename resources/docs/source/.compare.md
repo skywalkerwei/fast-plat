@@ -595,11 +595,11 @@ APIs for managing users
 
 ```bash
 curl -X GET \
-    -G "http://base.dev.com/api/t1?location_id=culpa&user_id=me&page=4" \
+    -G "http://base.dev.com/api/t1?location_id=dolorum&user_id=me&page=4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Authorization: Bearer {token}" \
-    -d '{"user_id":9,"room_id":"qui","forever":false}'
+    -d '{"user_id":9,"room_id":"neque","forever":false}'
 
 ```
 
@@ -609,7 +609,7 @@ const url = new URL(
 );
 
 let params = {
-    "location_id": "culpa",
+    "location_id": "dolorum",
     "user_id": "me",
     "page": "4",
 };
@@ -624,7 +624,7 @@ let headers = {
 
 let body = {
     "user_id": 9,
-    "room_id": "qui",
+    "room_id": "neque",
     "forever": false
 }
 
@@ -638,16 +638,6 @@ fetch(url, {
 ```
 
 
-> Example response (200):
-
-```json
-{
-    "success": true,
-    "data": "ok",
-    "code": 200,
-    "msg": "OK"
-}
-```
 
 ### HTTP Request
 `GET api/t1`
@@ -865,8 +855,8 @@ fetch(url, {
 ```json
 {
     "success": false,
-    "code": 10003,
-    "msg": "token无效"
+    "code": 0,
+    "msg": "Target class [App\\Services\\User\\UserService] does not exist."
 }
 ```
 
@@ -916,8 +906,8 @@ fetch(url, {
 ```json
 {
     "success": false,
-    "code": 10003,
-    "msg": "token无效"
+    "code": 0,
+    "msg": "Target class [App\\Services\\User\\UserService] does not exist."
 }
 ```
 

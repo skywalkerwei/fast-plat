@@ -14,7 +14,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-zip": "*",
-        "dcat/laravel-admin": "^1.7",
+        "dcat/laravel-admin": "v2.0.1-beta",
         "fideloper/proxy": "^4.0",
         "flc/laravel-middleware-cache-response": "^1.1",
         "fruitcake/laravel-cors": "^2.0",
@@ -24,15 +24,15 @@
         "laravel/horizon": "^3.6",
         "laravel/tinker": "^2.0",
         "league/fractal": "^0.19.2",
+        "mobiledetect/mobiledetectlib": "^2.8",
+        "nelexa/zip": "^3.3",
         "overtrue/easy-sms": "^1.1",
         "overtrue/laravel-wechat": "^5.0",
         "predis/predis": "^1.1",
         "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^3.13",
-        "nelexa/zip": "^3.3",
-        "mobiledetect/mobiledetectlib": "^2.8",
-        "yansongda/laravel-pay": "^2.0",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "yansongda/laravel-pay": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

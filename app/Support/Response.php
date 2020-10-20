@@ -134,6 +134,7 @@ class Response
     protected function formatData($data, $message, &$code)
     {
         $originalCode = $code;
+
         $code = (int) substr($code, 0, 3); // notice
 
         if ($code >= 400 && $code <= 499) {// client error

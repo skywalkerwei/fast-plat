@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\App;
 
 
+use App\Events\UserReg;
 use App\Services\Tools\ValidCode;
 use App\Services\User\Sms;
 use App\Services\User\Users;
@@ -19,7 +20,8 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
 
 use App\Services\Swoole\WebSocketClient;
-
+use Illuminate\Support\Facades\Mail;
+//use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
 /**
@@ -57,6 +59,16 @@ class Tests extends Base
      */
     public function tt()
     {
+        return  event(new UserReg('1'));
+//        return   $this->response->success("ok");
+
+//        abort(422, 'Invalid email: administrator not found');
+//        throw  new \Exception('token已过期',-10002);
+//        throw  new \App\Exceptions\ApiException('token已过期',10002);
+//        return $this->fail("sb");
+//        Mail::raw('test mail', function ($m) {
+//            $m->to('skywalkerwei@qq.com')->subject('test email');
+//        });
 
 //        $result = $this->smsService->loginCheck("18627111095",'123123');
 //        if($result){
@@ -69,7 +81,6 @@ class Tests extends Base
 //        $result =   $this->dispatch((new \App\Jobs\Notice($user))->onQueue("test"));
 //        $result= $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::now()->addMinutes(1)));
 //        $this->dispatch((new \App\Jobs\Notice($user))->delay(Carbon::tomorrow()));
-
 
 //        $data=[
 //            'to'=>"1",

@@ -39,7 +39,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            'throttle:180,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -78,6 +78,7 @@ class Kernel extends HttpKernel
 
         //response 缓存
         'cache.response' => \Flc\Laravel\Http\Middleware\CacheResponse::class,
+        'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
     ];
 
     /**

@@ -72,7 +72,7 @@ return [
     | Queue Wait Time Thresholds
     |--------------------------------------------------------------------------
     |
-    | This option allows you to configure when the LongWaitDetected event
+    | This option allows  you to configure when the LongWaitDetected event
     | will be fired. Every connection / queue combination may have its
     | own, unique threshold (in seconds) before this event is fired.
     |
@@ -142,21 +142,21 @@ return [
 
     'environments' => [
         'production' => [
-            'supervisor-1' => [
+            'kyle-production' => [
                 'connection' => 'redis',
-                'queue' => ['default','test'],
+                'queue' => ['default','order','print','pay','reg','login'],
                 'balance' => 'simple',
-                'processes' => 10,
+                'processes' => 3,
                 'tries' => 1,
             ],
         ],
 
         'local' => [
-            'supervisor-1' => [
+            'kyle-local' => [
                 'connection' => 'redis',
-                'queue' => ['default','test'],
+                'queue' => ['default','order','print','pay','reg','login'],
                 'balance' => 'simple',
-                'processes' => 10,
+                'processes' => 3,
                 'tries' => 1,
             ],
         ],
