@@ -43,6 +43,7 @@
         "nunomaduro/collision": "^3.0",
         "orangehill/iseed": "^2.6",
         "oscarafdev/migrations-generator": "2.0.13",
+        "arcanedev/log-viewer": "~5",
         "phpunit/phpunit": "^8.0"
     },
     "config": {
