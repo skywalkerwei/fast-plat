@@ -38,7 +38,6 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.6",
         "facade/ignition": "^1.4",
-        "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.0",
         "ycpfzf/apidoc": "^0.9.2",
         "nunomaduro/collision": "^3.0",

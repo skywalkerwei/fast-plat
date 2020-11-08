@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>kyle Admin</title>
+    <title>{{config('app.name')}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="author" content="kyle">
-    <meta name="description" content="一款基于Laravel的后台快速开发管理系统">
+    <meta name="author" content="{{config('app.name')}}">
+    <meta name="description" content="一款基于Laravel的Api快速开发模版">
     <link rel="icon" href="/favicon.ico">
     <link href='https://fonts.loli.net/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     <style>
@@ -24,8 +24,8 @@
 <body>
 <div id="wrapper">
     <h1> {{config('app.name')}}</h1>
-    <h2>&amp;一款基于Laravel的后台+接口快速开发管理系统&nbsp;</h2>
-    <p><a href="{{env('ADMIN_ROUTE_PREFIX')}}" title="点击体验">Go→</a></p>
+    <h2>&amp; 开箱即用，加速 Api 开发</h2>
+    <p><a href="{{env('DOC_PREFIX')}}" title="点击体验">Go→</a></p>
 
 </div>
 </body>
