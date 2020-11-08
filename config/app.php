@@ -171,7 +171,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -180,7 +180,8 @@ return [
         App\Providers\EasySmsServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
 
-//        Ycpfzf\Apidoc\DocServiceProvider::class,
+        Ycpfzf\Apidoc\DocServiceProvider::class,
+
 
     ],
 

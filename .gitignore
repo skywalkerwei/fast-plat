@@ -18,3 +18,4 @@ storage/laravels.json
 storage/laravels.pid
 storage/laravels.conf
 _ide_helper.php
+*.zip

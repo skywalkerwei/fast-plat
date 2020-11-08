@@ -23,17 +23,68 @@ return [
         'enable' => true,
         'handler' => \App\Services\Swoole\WebSocketService::class,
         // 表示每60秒遍历一次，一个连接如果600秒内未向服务器发送任何数据，此连接将被强制关闭
-        'heartbeat_idle_time'      => 600,
-        'heartbeat_check_interval' => 60,
+//        'heartbeat_idle_time'      => 600,
+//        'heartbeat_check_interval' => 60,
     ],
-    'sockets'                  => [],
+//    'sockets'                  => [],
+    'sockets' => [
+//        [
+//            'enable'   => true, // 是否启用，默认为true
+//            'host'     => '0.0.0.0',
+//            'port'     => 5555,
+//            'type'     => SWOOLE_SOCK_TCP,// 支持的嵌套字类型：https://wiki.swoole.com/#/consts?id=socket-%e7%b1%bb%e5%9e%8b
+//            'settings' => [// Swoole可用的配置项：https://wiki.swoole.com/#/server/port?id=%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0
+//                'open_eof_check' => true,
+//                'package_eof'    => "\r\n",
+//            ],
+//            'handler'  => \App\Services\Swoole\Sockets\TestTcpSocket::class,
+//        ],
+//        [
+//            'enable'   => true, // 是否启用，默认为true
+//            'host'     => '0.0.0.0',
+//            'port'     => 6666,
+//            'type'     => SWOOLE_SOCK_UDP,
+//            'settings' => [
+//                'open_eof_check' => true,
+//                'package_eof'    => "\r\n",
+//            ],
+//            'handler'  => \App\Services\Swoole\Sockets\TestUdpSocket::class,
+//        ],
+//        [
+//            'enable'   => true, // 是否启用，默认为true
+//            'host'     => '0.0.0.0',
+//            'port'     => 7777,
+//            'type'     => SWOOLE_SOCK_TCP,
+//            'settings' => [
+//                'open_http_protocol' => true,
+//            ],
+//            'handler'  => \App\Services\Swoole\Sockets\TestHttp::class,
+//        ],
+//        [
+//            'enable'   => true, // 是否启用，默认为true
+//            'host'     => '0.0.0.0',
+//            'port'     => 8888,
+//            'type'     => SWOOLE_SOCK_TCP,
+//            'settings' => [
+//                'open_http_protocol'      => true,
+//                'open_websocket_protocol' => true,
+//            ],
+//            'handler'  => \App\Services\Swoole\Sockets\TestWebSocket::class,
+//        ],
+    ],
+
     'processes'                => [
-        //[
-        //    'class'    => \App\Processes\TestProcess::class,
-        //    'redirect' => false, // Whether redirect stdin/stdout, true or false
-        //    'pipe'     => 0 // The type of pipeline, 0: no pipeline 1: SOCK_STREAM 2: SOCK_DGRAM
-        //    'enable'   => true // Whether to enable, default true
-        //],
+        [
+            'enable'   => false,  // 是否启用，默认true
+            'class'    => \App\Services\Swoole\Processes\TestProcesses::class,
+            'redirect' => false, // 是否重定向输入输出
+            'pipe'     => 0,     // 管道类型：0不创建管道，1创建SOCK_STREAM类型管道，2创建SOCK_DGRAM类型管道
+            'queue'    => [ // 启用消息队列作为进程间通信，配置空数组表示使用默认参数
+                'msg_key'  => 0,    // 消息队列的KEY，默认会使用ftok(__FILE__, 1)
+                'mode'     => 2,    // 通信模式，默认为2，表示争抢模式
+                'capacity' => 8192, // 单个消息长度，长度受限于操作系统内核参数的限制，默认为8192，最大不超过65536
+            ],
+        ],
     ],
     'timer'                    => [
         'enable'        => env('LARAVELS_TIMER', false),
@@ -47,12 +98,42 @@ return [
         'max_wait_time' => 5,
     ],
     'swoole_tables'            => [
+
         'ws' => [
             'size'   => 102400,//Table的最大行数
             'column' => [// Table的列定义
-                ['name' => 'value', 'type' => \Swoole\Table::TYPE_INT, 'size' => 8],
+                [
+                    'name' => 'value',
+                    'type' => \Swoole\Table::TYPE_INT,
+                    'size' => 8
+                ],
             ],
         ],
+
+        // 场景：WebSocket中UserId与FD绑定
+        'demo'   => [// Key为Table名称，使用时会自动添加Table后缀，避免重名。这里定义名为wsTable的Table
+            'size'   => 102400,//Table的最大行数
+            'column' => [// Table的列定义
+                [
+                    'name' => 'id',
+                    'type' => \Swoole\Table::TYPE_INT,
+                    'size' => 8
+                ],
+                [
+                    'name' => 'name',
+                    'type' => \Swoole\Table::TYPE_STRING,
+                    'size' => 256
+                ],
+                [
+                    'name' => 'avatar',
+                    'type' => \Swoole\Table::TYPE_STRING,
+                    'size' => 256
+                ],
+            ],
+        ],
+
+
+
     ],
     'register_providers'       => [],
     'cleaners'                 => [

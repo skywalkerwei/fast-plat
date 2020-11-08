@@ -50,7 +50,8 @@ return [
     //短信模版
     'template'=>[
         'reg'=>'SMS_119076662',
-        'login'=>'SMS_119076662'
+        'login'=>'SMS_119076662',
+
     ],
 
 

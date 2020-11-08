@@ -9,7 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 class UserRegListener implements ShouldQueue
 {
 
-    //指定队列----reg
+    //指定队列
     public $queue = 'reg';
 
     /**

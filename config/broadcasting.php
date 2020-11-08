@@ -54,6 +54,10 @@ return [
             'driver' => 'null',
         ],
 
+        'swoole' => [
+            'driver' => 'swoole',
+        ],
+
     ],
 
 ];
