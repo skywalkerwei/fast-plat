@@ -18,9 +18,6 @@ Route::group([
     'middleware'    => ['api.access'],
 ], function (Router $api) {
 
-    $api->get('goods', 'Goods@index');
-    $api->get('goods/{id}', 'Goods@show');
-
     $api->get('t1', 'Tests@tt');
     $api->get('t2', 'Tests@tt2');
     $api->post('login', 'Auth@login');

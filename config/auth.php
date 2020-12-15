@@ -90,15 +90,15 @@ return [
 //        ],
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Repository\Models\User::class,
+            'model' => App\Models\User::class,
         ],
         'admins' => [
             'driver' => 'eloquent',
-            'model' =>  App\Repository\Models\Admin\User::class,
+            'model' =>  App\Models\Admin\User::class,
         ],
         'merchant' => [
             'driver' => 'eloquent',
-            'model' =>  App\Repository\Models\Merchant\User::class,
+            'model' =>  App\Models\Merchant\User::class,
         ]
 
         // 'users' => [

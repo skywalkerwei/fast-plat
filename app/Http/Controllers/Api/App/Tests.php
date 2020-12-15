@@ -3,18 +3,16 @@
 namespace App\Http\Controllers\Api\App;
 
 
-use App\Events\OrderPayed;
 use App\Events\UserReg;
 use App\Services\Tools\ValidCode;
 use App\Services\User\Sms;
 use App\Services\User\UserService;
-use App\Services\Goods\GoodsService;
 use App\Http\Controllers\Base;
 
 use App\Http\Requests\UserRequest;
 use App\Jobs\Notice;
 use App\Exceptions\ApiException;
-use App\Repository\Models\User;
+use App\Models\User;
 use Illuminate\Support\Carbon;
 
 use GuzzleHttp\Client;
@@ -23,8 +21,6 @@ use Illuminate\Support\Facades\Cache;
 use App\Services\Swoole\SysMsgSend;
 use Illuminate\Support\Facades\Mail;
 
-use Hhxsv5\LaravelS\Swoole\Task\Task;
-use App\Services\Swoole\Tasks\TestTask;
 use App\Services\Swoole\Table\UserTable;
 
 use Illuminate\Support\Facades\Log;
@@ -40,38 +36,22 @@ class Tests extends Base
 {
 
 
-    protected $sysMsgSend;
-    protected $goodsService;
-    protected $smsService;
 
-    protected $userTable;
-
-    public function __construct(SysMsgSend $sysMsgSend,GoodsService $goodsService,Sms $smsService)
+    public function __construct()
     {
-        $this->sysMsgSend = $sysMsgSend;
-        $this->goodsService = $goodsService;
-        $this->smsService = $smsService;
 
     }
 
     /**
      * 测试-tt
      *
-     * 测试内容
-     *
-     * @urlParam  id required The ID of the post.
-     * @urlParam  lang The language.
-     * @queryParam  location_id required The id of the location.
-     * @queryParam  user_id required The id of the user. Example: me
-     * @queryParam  page required The page number. Example: 4
-     * @bodyParam  user_id int required The id of the user. Example: 9
-     * @bodyParam  room_id string The id of the room.
-     * @bodyParam  forever boolean Whether to ban the user forever. Example: false
      */
     public function tt()
     {
+//        return   $this->response->success("ok");
+//           $this->response->fail("ok");
 
-        return  event(new OrderPayed('1123123123123'));
+//        return  event(new OrderPayed('1123123123123'));
 
 //        $client = new \swoole_client(SWOOLE_SOCK_TCP);
 //        $ret = $client->connect('0.0.0.0',8888,0.5);  // 创建连接

@@ -28,7 +28,6 @@
         "overtrue/easy-sms": "^1.1",
         "overtrue/laravel-wechat": "^5.0",
         "predis/predis": "^1.1",
-        "prettus/l5-repository": "^2.6",
         "spatie/laravel-permission": "^3.13",
         "textalk/websocket": "^1.4",
         "tymon/jwt-auth": "^1.0",
