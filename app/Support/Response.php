@@ -1,10 +1,8 @@
 <?php
 
-
 namespace App\Support;
 
-use App\Exceptions\InvalidEnumValueException;
-use App\Repository\Enums\ResponseCodeEnum;
+
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -129,7 +127,7 @@ class Response
      * @param $code
      *
      * @return array
-     * @throws InvalidEnumValueException
+     * @throws
      */
     protected function formatData($data, $message, &$code)
     {
@@ -151,7 +149,7 @@ class Response
             'success' => $status,
             'data' => $data ?: (object) $data,
             'code' => $originalCode,
-            'msg' => $message ?: ResponseCodeEnum::fromValue($originalCode)->description,
+            'msg' => $message ?: '',
         ];
     }
 
@@ -165,7 +163,7 @@ class Response
      * @param  int  $option
      *
      * @return HigherOrderTapProxy|mixed
-     * @throws InvalidEnumValueException
+     * @throws
      */
     protected function formatPaginatedResourceResponse($resource, string $message = '', $code = HttpResponse::HTTP_OK, array $headers = [], $option = 0)
     {

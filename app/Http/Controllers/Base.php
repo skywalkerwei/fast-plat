@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers;
 
 use App\Support\Traits\ResponseTrait;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class Base extends Controller
@@ -15,9 +16,11 @@ class Base extends Controller
     use ResponseTrait;
 
     public function user(){
-         $token = JWTAuth::getToken();
-         if($token){
-            return JWTAuth::parseToken()->authenticate();
+         if($token = JWTAuth::getToken()){
+             try {
+                 return JWTAuth::parseToken()->authenticate();
+             } catch (JWTException $e) {
+             }
          }
          return null;
     }
@@ -27,7 +30,7 @@ class Base extends Controller
     }
 
     public function fail($msg = 'faild', $data = [], $code = 0) {
-        return $this->response->fail($msg, $code,$data);
+         $this->response->fail($msg, $code,$data);
     }
 
     public function clearToken(){
@@ -35,9 +38,11 @@ class Base extends Controller
     }
 
     public  function refresh(){
-        $token = JWTAuth::getToken();
-        if($token){
-            return JWTAuth::parseToken()->refresh();
+        if($token = JWTAuth::getToken()){
+            try {
+                return JWTAuth::parseToken()->refresh();
+            } catch (JWTException $e) {
+            }
         }
         return null;
     }

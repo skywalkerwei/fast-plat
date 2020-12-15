@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Repository\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Prettus\Repository\Contracts\Transformable;
-use Prettus\Repository\Traits\TransformableTrait;
+
 
 /**
  * Class GoodsSpecification.
  *
  * @package namespace App\Repository\Models;
  */
-class GoodsSpecification extends Model implements Transformable
+class GoodsSpecification extends Model
 {
-    use TransformableTrait;
 
     protected $table = 'goods_specification';
 

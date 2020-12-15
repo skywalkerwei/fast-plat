@@ -1,26 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zengfanwei
- * Date: 2018/11/7
- * Time: 14:31
- */
 
-namespace App\Repository\Models\Admin;
-
-use Illuminate\Database\Eloquent\Model;
+namespace App\Models\Merchant;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable  implements JWTSubject
 {
     use Notifiable;
 
+    protected $table = 'merchant_users';
 
-    protected $table = 'auth_admin';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'password',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -28,28 +28,24 @@ class User extends Authenticatable  implements JWTSubject
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password', 'remember_token',
     ];
 
-    public static $instance;
-
-    public static function getInstance()
-    {
-        if(!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'phone_verified_at' => 'datetime',
+    ];
+
+     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
      */
-    public function getJWTIdentifier()
-    {
+    public function getJWTIdentifier() {
         return $this->getKey();
     }
 
@@ -58,8 +54,9 @@ class User extends Authenticatable  implements JWTSubject
      *
      * @return array
      */
-    public function getJWTCustomClaims()
-    {
-        return ['role' => 'admin'];
+    public function getJWTCustomClaims() {
+       return ['role' => 'merchant'];
+        // return  [];
     }
+
 }
